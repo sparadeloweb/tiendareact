@@ -1,0 +1,144 @@
+:root{
+    font-size: 16px;
+    font-family: 'Lato';
+    --transition-speed: 600ms;
+}
+
+body{
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: #1e272e;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #0fbcf9;
+}
+
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.navbar2{
+    position: fixed;
+    background: #1e272e;
+    transition: width 200ms ease;
+}
+
+.navbar-nav2{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item2{
+    width: 100%;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: #d2dae2;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: #13191f;
+}
+
+.link-text{
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link svg{
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    transition: var(--transition-speed);
+    color: #0fbcf9;
+}
+
+.link-text{
+    font-weight: bold;
+}
+
+.logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #0fbcf9;
+    background: #13191f;
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo svg{
+    font-size: 2.0rem;
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+}
+
+.navbar2:hover .logo svg{
+    transform: rotate(-180deg);
+}
+
+/*Pantallas chicas*/
+@media only screen and (max-width: 600px){
+    .navbar2{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .navbar-nav2{
+        flex-direction: row;
+    }
+    
+    .nav-link{
+        justify-content: center;
+    }
+
+    main{
+        margin: 0;
+    }
+}
+
+/*Pantallas grandes*/
+@media only screen and (min-width: 600px){
+    .navbar2{
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar2:hover{
+        width: 16rem;
+    }
+
+    .navbar2:hover .link-text{
+        display: inline;
+        transition: var(--transition-speed);
+    }    
+}

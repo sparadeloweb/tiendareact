@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'; // Importo bootstrap instalado por NPM
-import './styles/styles.css'; // Importo los estilos generales
+//import 'bootstrap/dist/css/bootstrap.css'; // Importo bootstrap instalado por NPM
+import './styles/style.css'; // Importo los estilos generales
+import '@fortawesome/fontawesome-free/js/brands.js';
+import '@fortawesome/fontawesome-free/js/solid.js';
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
