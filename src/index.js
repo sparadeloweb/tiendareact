@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'bootstrap/dist/css/bootstrap.css'; // Importo bootstrap instalado por NPM
+import './styles/styles.css'; // Importo los estilos generales
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
