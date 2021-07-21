@@ -9,9 +9,11 @@
 
 .header{
     display: flex;
-    height: 150px;
-    background-color: #1e272e;
-    box-shadow: 0.5px 2px 1px black;
+    height: 200px;
+    /*background-color: #1e272e;*/
+    background-position-y: -45%;
+    background-size: 100%;
+    box-shadow: 0.5px 1px 1px #61DAFB;
     color: white;
     font-family: 'Lato', sans-serif;
 }
@@ -55,6 +57,9 @@
     transition: transform 250ms ease-in-out;
 }
 
+.header-title-and-icon h1:after
+{ transform: scaleX(1); }
+
 .header-category-sections p:hover:after,
 .header-title-and-icon h1:hover:after
 { transform: scaleX(1); }
@@ -72,13 +77,14 @@
 
 @media(max-width: 768px){
     .header{
+        background-position-y: 100%;
         flex-wrap: wrap;
         height: 200px;
     }
 
     .header-title-and-icon{
         justify-content: center;
-        margin-left: -30px;
+        margin-left: -25px;
     }
 
     .header-logo{
@@ -86,8 +92,9 @@
     }
 
     .header-category-sections{
-        justify-content: center;
+        justify-content: space-evenly;
         margin-top: -50px;
+        margin-left: 20px;
     }
 }
 
