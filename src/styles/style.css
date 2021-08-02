@@ -146,3 +146,31 @@ main{
         transition: var(--transition-speed);
     }    
 }
+
+.button{
+    color: #0fbcf9;
+    background: #13191f;
+    border: none;
+    border-radius: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.count-display{
+    display: flex;
+    height: 30px;
+    width: 150px;
+    justify-content: space-between;
+    line-height: 0px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #1e272e;
+    color: white;
+}
+
+.count-display p{
+    font-family: 'Lato';
+    font-weight: bold;
+}
+
