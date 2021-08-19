@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 function Logo(){
     return(
         <li className="logo">
-            <a href="#" className="nav-link">
+            <Link to="/" className="nav-link">
                 <span className="link-text">Tienda React</span>
                 <i class="fab fa-react"></i>
-            </a>
+            </Link>
         </li>
     );
 }

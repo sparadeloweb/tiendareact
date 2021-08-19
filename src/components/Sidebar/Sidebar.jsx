@@ -7,9 +7,9 @@ function Sidebar() { // Defino el JSX
         <div className="navbar2">
             <ul className="navbar-nav2">
                 <Logo/>
-                <SidebarItem icon="fa-box-open" text="Productos"/>
-                <SidebarItem icon="fa-newspaper" text="Noticias"/>
-                <SidebarItem icon="fa-address-book" text="Contacto"/>
+                <SidebarItem icon="fa-box-open" text="Productos" path="/products"/>
+                <SidebarItem icon="fa-newspaper" text="Noticias" path="/news"/>
+                <SidebarItem icon="fa-address-book" text="Contacto" path="/contact"/>
                 <CartWidget/>
             </ul>
         </div>
