@@ -9,6 +9,7 @@ body{
     background-color: white;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 body::-webkit-scrollbar{
@@ -28,11 +29,21 @@ main{
     padding: 1rem;
     background-color: #485460;
     height: 100vh;
+    background-size: cover; 
+    max-height: 100%;
     display: flex;
 }
 
 img{
     width: 100%;
+}
+
+.blackscreen{
+    position: absolute;
+    width: 99.8vw;
+    height: 100vh;
+    max-height :100%;
+    background-color: rgba(5, 5, 5, 0.6);
 }
 
 .navbar2{
@@ -395,4 +406,110 @@ img{
         margin-left: 0px;
         margin-top: 15px;
     }
+}
+
+.home-page-container{
+    width: 100%;
+}
+
+.home-page-container h2{
+    color: #0fbcf9;;
+    padding: 10px;
+    background-color: #13191f;
+    border-radius: 5px;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.card-with-ilu{
+    height: 500px;
+    background-color: #13191f;
+    border-radius: 5px;
+    display: flex;
+}
+
+.card-with-ilu-image{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-with-ilu-image img{
+    width: 80%;
+    height: 80%;
+}
+
+.card-with-ilu-information{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.card-with-ilu-information-subdiv{
+    align-self: center;
+}
+
+.card-with-ilu-information-subdiv h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #0fbcf9;
+}
+
+.card-with-ilu-information-subdiv p{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media (max-width: 1200px) {
+    .card-with-ilu{
+        display: block;
+        height: 700px;
+    }
+
+    .card-with-ilu-image{
+        width: 100%;
+        height: 50%;
+    }
+
+    .card-with-ilu-information{
+        height: 50%;
+        padding: 0px;
+    }
+}
+
+.buttons-for-home-container {
+    height: 200px;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-color: #13191f;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.buttons-for-home-container a {
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    align-items: center;
+    background-color: #0fbcf9;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+.buttons-for-home-container a svg {
+    margin-right: 5px;
 }
