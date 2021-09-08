@@ -1,12 +1,39 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/helpers/Button';
 import Icon from '../components/helpers/Icon';
 import ItemCount from '../components/ItemCount';
+import CartContext from '../context/CartContext';
 
-function ProductDetail(){
+function ProductDetail({onAdd}){
 
-    const [item, setItem] = useState();
+    const [items, setItems] = useState(false);
+    const [item, setItem] = useState({});
+
+    const cartContext = useContext(CartContext);
+
+    let stock = 5; // Se debe cambiar a item.stock
+
+    const addItem = (item, quantity) => {
+        console.log(isOnCart(item));
+        if(isOnCart(item)) {
+            let id = item.id;
+            console.log(cartContext.cart, cartContext.cart.id);
+            let oldQuantity = cartContext.cart.id.quantity;
+            if(oldQuantity + quantity <= stock ) {
+                let finalItemVar = {...item, quantity: oldQuantity + quantity};
+                cartContext.setCart({...cartContext.cart, [item.id] : finalItemVar});
+            }
+        } else {
+            let finalItemVar = {...item, quantity: quantity};
+            
+            cartContext.setCart({...cartContext.cart, [item.id] : finalItemVar});
+        }
+    }
+
+    const isOnCart = (passedItem) => {
+        return cartContext.cart.hasOwnProperty(passedItem.id);
+    }
 
     useEffect(() => {
         setTimeout( () => {
@@ -19,8 +46,9 @@ function ProductDetail(){
             };
             setItem(item);
         }, 2000);
-
     }, []);
+
+    
 
     return(
         <div className="page-details">
@@ -32,20 +60,9 @@ function ProductDetail(){
             <div className="product-detail-info">
                 <h2>{`${item.title}`}</h2>
                 <p>{`${item.description}`}</p>
-                <ItemCount stock={5} initial={0}/>
+                <ItemCount stock={5} onAdd={setItems} initial={0}/>
                 <div className="product-detail-item-actions">
-                    <Link to="/">
-                        <Icon iconClass="fas fa-shopping-cart"/>
-                        Añadir al carrito
-                    </Link>
-                    <Link to="/">
-                        <Icon iconClass="fas fa-heart"/>
-                        Me Gusta
-                    </Link>
-                    <Link to="/">
-                        <Icon iconClass="fas fa-share"/>
-                        Compartir
-                    </Link>
+                    {items ? <button onClick={() => addItem(item, items)}>Terminar compra</button> : null}
                 </div>
             </div>
         </div>

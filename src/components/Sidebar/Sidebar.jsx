@@ -2,7 +2,7 @@ import CartWidget from "./CartWidget";
 import Logo from "./Logo";
 import SidebarItem from "./SidebarItem";
 import { useState, useContext, useEffect } from 'react';
-import { CartContext } from './../../context/CartContext.jsx';
+import CartContext from '../../context/CartContext.jsx';
 
 function Sidebar() { // Defino el JSX
 

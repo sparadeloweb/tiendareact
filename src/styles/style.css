@@ -357,7 +357,8 @@ img{
     margin-top: 20px;
 }
 
-.product-detail-item-actions a{
+.product-detail-item-actions a,
+.product-detail-item-actions button {
     font-weight: bold;
     background-image: linear-gradient(
         135deg,

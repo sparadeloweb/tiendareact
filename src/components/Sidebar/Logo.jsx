@@ -5,7 +5,7 @@ function Logo(){
         <li className="logo">
             <Link to="/" className="nav-link">
                 <span className="link-text">Tienda React</span>
-                <i class="fab fa-react"></i>
+                <i className="fab fa-react"></i>
             </Link>
         </li>
     );

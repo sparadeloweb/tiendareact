@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 
 import Sidebar from './components/Sidebar/Sidebar'; // Importo el componente Sidebar (mi primer componente creado)
-import { CartContext } from './context/CartContext';
+import CartContext from './context/CartContext';
 import Products from './pages/Products';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
