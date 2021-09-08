@@ -12,27 +12,17 @@ function ProductDetail({onAdd}){
 
     const cartContext = useContext(CartContext);
 
-    let stock = 5; // Se debe cambiar a item.stock
-
-    const addItem = (item, quantity) => {
-        console.log(isOnCart(item));
-        if(isOnCart(item)) {
-            let id = item.id;
-            console.log(cartContext.cart, cartContext.cart.id);
-            let oldQuantity = cartContext.cart.id.quantity;
-            if(oldQuantity + quantity <= stock ) {
-                let finalItemVar = {...item, quantity: oldQuantity + quantity};
-                cartContext.setCart({...cartContext.cart, [item.id] : finalItemVar});
-            }
-        } else {
-            let finalItemVar = {...item, quantity: quantity};
-            
-            cartContext.setCart({...cartContext.cart, [item.id] : finalItemVar});
-        }
+    const isInCart = (itemId) => {
+        return cartContext.cart.some(item => item.id == itemId);
     }
 
-    const isOnCart = (passedItem) => {
-        return cartContext.cart.hasOwnProperty(passedItem.id);
+    const addItemToCart = (newItem, quantity) => {
+        if (isInCart(newItem.id)) {
+            const cartEditado = cartContext.cart.map(item => item.id === newItem.id ? {...newItem, quantity: quantity} : item);
+            cartContext.setCart(cartEditado);
+        } else {
+            cartContext.setCart([...cartContext.cart, {...newItem, quantity: quantity}]);
+        }
     }
 
     useEffect(() => {
@@ -62,7 +52,7 @@ function ProductDetail({onAdd}){
                 <p>{`${item.description}`}</p>
                 <ItemCount stock={5} onAdd={setItems} initial={0}/>
                 <div className="product-detail-item-actions">
-                    {items ? <button onClick={() => addItem(item, items)}>Terminar compra</button> : null}
+                    {items ? <button onClick={() => addItemToCart(item, items)}>Terminar compra</button> : null}
                 </div>
             </div>
         </div>
